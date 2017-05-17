@@ -4,21 +4,24 @@
 
 <head>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.4/angular.js"></script>
-    <script src="lectureApp.js"></script>
+    <script src="app.js"></script>
 </head>
 
 <body ng-app="NewChatApp">
     <h1>Mac's Chats!</h1>
 
-    <main ng-controller="ChatAppController">
-        <ul>
-            <li>
+    <main>
+        <ul ng-controller="ReceiveMessageController">
+            <li ng-repeat="something in newMessages">
+                <p>Message: {{ something.message }}</p>
+                <p>From: {{ something.from }} at {{ something.added }}</p>
             </li>
+            <!--<button>Get New Messages!</button>-->
         </ul>
-        
-        <section ng-controller="NewMessageController">
-            
 
+        <section ng-controller="SendMessageController">
+            
+            <!--<button>Send!</button>-->
         </section>
 
     </main>
