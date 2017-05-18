@@ -7,7 +7,7 @@ app.controller('ReceiveMessageController', function ($scope, ChatService) {
 
     $scope.messageNow = ChatService.getNewChats();
 
-    $scope.readChat = function(chat) {
+    $scope.readChat = function (chat) {
         ChatService.readChat(chat);
     };
 
@@ -31,7 +31,7 @@ app.factory('ChatService', function ($http) {
 
     $http.get('https://tiy-28202.herokuapp.com/chats').then(function (response) {
 
-        const statements = response.data.chats; 
+        const statements = response.data.chats;
         for (let i = 0; i < statements.length; i++) {
             newMessages.push({
                 from: statements[i].from,
@@ -39,25 +39,28 @@ app.factory('ChatService', function ($http) {
                 id: statements[i].id,
                 added: statements[i].added,
             });
-        }; 
+        };
         console.log(newMessages);
     });
 
-    $http.post('https://tiy-28202.herokuapp.com/chats').then(function (thingie){
+    $http.post('https://tiy-28202.herokuapp.com/chats', someobject).then(function (thingie) {
 
-        const 
-
+        /**
+         * 
+         * 
+         * 
+         */
     });
 
 
     return {
-        getChats(){
+        getChats() {
             return newMessages;
         },
-        getNewChats(){
+        getNewChats() {
             return messageNow;
         },
-        readChat(chat){
+        readChat(chat) {
             messageNow.message = chat.message;
         },
     };
