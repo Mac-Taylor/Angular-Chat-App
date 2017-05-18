@@ -43,6 +43,12 @@ app.factory('ChatService', function ($http) {
         console.log(newMessages);
     });
 
+    $http.post('https://tiy-28202.herokuapp.com/chats').then(function (thingie){
+
+        
+
+    });
+
 
     return {
         getChats(){
