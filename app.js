@@ -15,7 +15,12 @@ app.controller('ReceiveMessageController', function ($scope, ChatService) {
 
 app.controller('SendMessageController', function ($scope, ChatService) {
 
-
+    $scope.functionName = function () {
+        ChatService.sendMessage({
+            message: $scope.msg,
+            from: $scope.usrnm,
+        });
+    };
 
 });
 
@@ -43,16 +48,6 @@ app.factory('ChatService', function ($http) {
         console.log(newMessages);
     });
 
-    $http.post('https://tiy-28202.herokuapp.com/chats', someobject).then(function (thingie) {
-
-        /**
-         * 
-         * 
-         * 
-         */
-    });
-
-
     return {
         getChats() {
             return newMessages;
@@ -62,6 +57,10 @@ app.factory('ChatService', function ($http) {
         },
         readChat(chat) {
             messageNow.message = chat.message;
+        },
+        sendMessage(someObject) {
+            $http.post('https://tiy-28202.herokuapp.com/chats', someObject);
+            console.log('click');
         },
     };
 });
