@@ -10,17 +10,18 @@
 
 <body ng-app="NewChatApp">
     <h1>Mac's Chats!</h1>
-
     <main>
         <ul ng-controller="ReceiveMessageController">
             <li ng-repeat="something in newMessages">
-                <p>Message: {{ something.message }}</p>
-                <p>From: {{ something.from }} at {{ something.added }}</p>
+                <p id="message-content">{{ something.message }}</p>
+                <p id="extra-info">From: {{ something.from }} at {{ something.added }}</p>
             </li>
             <!--<button>Get New Messages!</button>-->
         </ul>
 
         <section ng-controller="SendMessageController">
+            
+            <h2>ENTER CHATS HERE</h2>
             
             <input type="text" ng-model="msg"></input>
             <button ng-click="functionName()">Send!</button>

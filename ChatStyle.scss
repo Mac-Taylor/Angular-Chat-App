@@ -3,21 +3,61 @@
 @include foundation-global-styles;
 @include foundation-grid;
 
-body {
+body, section {
     background-color: darkblue;
     @include grid-row();
-    @include grid-column(8);
 }
-
+section {
+    margin-bottom: 10%;
+    padding-right: 5px;
+}
+body {
+    background-color: lightsalmon;
+}
 h1 {
     color: yellowgreen;
+    text-align: center;
+    font-style: underline;
+    border: 2px solid darkblue;
+    padding: 3px;
 }
 
-main {
-    color: deepskyblue;
+main, h1 {
+    color: darkblue;
+    background-color: lightsalmon;
+    @include grid-column(12);
 }
 
 button {
-    
-    color: darkblue;
+    color: lightsalmon;
+    border: 1px solid lightsalmon;
 }
+
+ul {
+    border: 2px darkblue;
+    margin: 2em;
+    padding: 2em;
+    text-align: center;
+    list-style-type: none;
+    padding: 0;
+}
+
+li, p {
+    list-style-type: none;
+}
+
+#message-content {
+    font-size: 2em;
+}
+
+h2 {
+    color: lightsalmon;
+    text-align: center;
+}
+
+section {
+    align-content: center;
+    padding: 5%;
+}
+
+
