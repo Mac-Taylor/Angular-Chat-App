@@ -1436,4 +1436,7 @@ section {
   align-content: center;
   padding: 5%; }
 
+section p {
+  color: lightsalmon; }
+
 /*# sourceMappingURL=stylesheet.css.map */
